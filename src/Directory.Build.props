@@ -1,0 +1,11 @@
+<Project>
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <WarningsAsErrors>Nullable,FS0025,FS0026</WarningsAsErrors>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <NoWarn>8034</NoWarn>
+    </PropertyGroup>
+</Project>
