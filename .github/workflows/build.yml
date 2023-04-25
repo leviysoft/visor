@@ -1,0 +1,21 @@
+name: Build
+on:
+  workflow_call:
+  pull_request:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.x' # SDK Version to use.
+      - name: build
+        run: |
+          dotnet build src/Visor.sln -c Release
+      - name: run unit tests
+        run: |
+          dotnet test src -c Release --no-restore
