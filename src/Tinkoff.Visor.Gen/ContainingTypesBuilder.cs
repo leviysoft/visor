@@ -9,6 +9,8 @@ namespace Tinkoff.Visor.Gen
 {
     internal static class ContainingTypesBuilder
     {
+        static string Indent(int Steps) => new string(' ', Steps * 4);
+
         static IEnumerable<INamespaceOrTypeSymbol> ContainingNamespaceAndTypes(ISymbol symbol, bool includeSelf)
         {
             foreach (var item in AllContainingNamespacesAndTypes(symbol, includeSelf))
@@ -24,7 +26,7 @@ namespace Tinkoff.Visor.Gen
         {
             if (includeSelf && symbol is INamespaceOrTypeSymbol self)
                 yield return self;
-            
+
             while (true)
             {
                 symbol = symbol.ContainingSymbol;
@@ -40,9 +42,7 @@ namespace Tinkoff.Visor.Gen
         {
             var sb = new StringBuilder();
             var symbols = ContainingNamespaceAndTypes(symbol, includeSelf).ToList();
-            
-            sb.AppendLine();
-            
+
             for (var i = symbols.Count - 1; i >= 0; i--)
             {
                 var s = symbols[i];
@@ -60,16 +60,15 @@ namespace Tinkoff.Visor.Gen
                         .First()
                         .Keyword
                         .ValueText;
-                 
+
                     var typeName = s.ToDisplayString(SymbolDisplayFormat.MinimallyQualifiedFormat);
-                    sb.AppendLine($"partial {keyword} {typeName} {{");
+                    sb.AppendLine($"{Indent(1)}partial {keyword} {typeName} {{");
                 }
             }
 
             content(sb);
-            sb.AppendLine();
 
-            symbols.Aggregate(sb, (builder, _) => sb.AppendLine("}"));
+            symbols.Aggregate(sb, (builder, sym) => sym.IsNamespace ? sb.AppendLine("}") : sb.AppendLine($"{Indent(1)}}}"));
 
             return sb.ToString();
         }
