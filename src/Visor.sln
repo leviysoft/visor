@@ -1,5 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# 
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinkoff.Visor.Gen", "Tinkoff.Visor.Gen\Tinkoff.Visor.Gen.csproj", "{E8D2803F-6E57-440F-806A-27BB2575C0EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinkoff.Visor.Gen.Tests", "Tinkoff.Visor.Gen.Tests\Tinkoff.Visor.Gen.Tests.csproj", "{49597BF6-5B5E-4B82-8835-AF91B923D6F9}"
@@ -9,6 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinkoff.Visor.Tests", "Tinkoff.Visor.Tests\Tinkoff.Visor.Tests.csproj", "{55D94966-7858-44C6-97A6-2CC0B3D22FDB}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tinkoff.Visor.Gen.FSharp", "Tinkoff.Visor.Gen.FSharp\Tinkoff.Visor.Gen.FSharp.fsproj", "{77D2D99A-6BDF-4C76-8D4D-F0BF67A5EFE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinkoff.Visor.LanguageExt", "Tinkoff.Visor.LanguageExt\Tinkoff.Visor.LanguageExt.csproj", "{F9037238-BB0D-456C-A3AA-FED9CC7B7B05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinkoff.Visor.LanguageExt.Tests", "Tinkoff.Visor.LanguageExt.Tests\Tinkoff.Visor.LanguageExt.Tests.csproj", "{0AE99366-1370-4DD4-A1AA-46B969FC9DA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +41,13 @@ Global
 		{77D2D99A-6BDF-4C76-8D4D-F0BF67A5EFE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77D2D99A-6BDF-4C76-8D4D-F0BF67A5EFE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77D2D99A-6BDF-4C76-8D4D-F0BF67A5EFE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9037238-BB0D-456C-A3AA-FED9CC7B7B05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9037238-BB0D-456C-A3AA-FED9CC7B7B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9037238-BB0D-456C-A3AA-FED9CC7B7B05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9037238-BB0D-456C-A3AA-FED9CC7B7B05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AE99366-1370-4DD4-A1AA-46B969FC9DA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE99366-1370-4DD4-A1AA-46B969FC9DA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE99366-1370-4DD4-A1AA-46B969FC9DA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE99366-1370-4DD4-A1AA-46B969FC9DA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

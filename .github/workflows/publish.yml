@@ -24,15 +24,19 @@ jobs:
       - name: pack Tinkoff.Visor
         run: |
           cd src
-          dotnet pack Tinkoff.Visor/Tinkoff.Visor.csproj -c Release  /p:PackageVersion=${{env.VERSION}}
+          dotnet pack Tinkoff.Visor/Tinkoff.Visor.csproj -c Release /p:Version=${{env.VERSION}} /p:PackageVersion=${{env.VERSION}}
       - name: pack Tinkoff.Visor.Gen
         run: |
           cd src
-          dotnet pack Tinkoff.Visor.Gen/Tinkoff.Visor.Gen.csproj -c Release  /p:PackageVersion=${{env.VERSION}}
+          dotnet pack Tinkoff.Visor.Gen/Tinkoff.Visor.Gen.csproj -c Release /p:Version=${{env.VERSION}} /p:PackageVersion=${{env.VERSION}}
       - name: pack Tinkoff.Visor.Gen.FSharp
         run: |
           cd src
-          dotnet pack Tinkoff.Visor.Gen.FSharp/Tinkoff.Visor.Gen.FSharp.csproj -c Release  /p:PackageVersion=${{env.VERSION}}
+          dotnet pack Tinkoff.Visor.Gen.FSharp/Tinkoff.Visor.Gen.FSharp.csproj -c Release /p:Version=${{env.VERSION}} /p:PackageVersion=${{env.VERSION}}
+      - name: pack Tinkoff.Visor.LanguageExt
+        run: |
+          cd src
+          dotnet pack Tinkoff.Visor.LanguageExt/Tinkoff.Visor.LanguageExt.csproj -c Release /p:Version=${{env.VERSION}} /p:PackageVersion=${{env.VERSION}}
       - name: publish
         run: |
           cd src
