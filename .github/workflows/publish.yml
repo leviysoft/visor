@@ -40,4 +40,4 @@ jobs:
       - name: publish
         run: |
           cd src
-          dotnet nuget push **/Tinkoff.Visor.*.nupkg -k ${{secrets.NUGET_APIKEY}} -s https://www.nuget.org
+          dotnet nuget push **/*.nupkg -k ${{secrets.NUGET_APIKEY}} -s https://www.nuget.org
