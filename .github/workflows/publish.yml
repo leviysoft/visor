@@ -32,7 +32,7 @@ jobs:
       - name: pack Tinkoff.Visor.Gen.FSharp
         run: |
           cd src
-          dotnet pack Tinkoff.Visor.Gen.FSharp/Tinkoff.Visor.Gen.FSharp.csproj -c Release /p:Version=${{env.VERSION}} /p:PackageVersion=${{env.VERSION}}
+          dotnet pack Tinkoff.Visor.Gen.FSharp/Tinkoff.Visor.Gen.FSharp.fsproj -c Release /p:Version=${{env.VERSION}} /p:PackageVersion=${{env.VERSION}}
       - name: pack Tinkoff.Visor.LanguageExt
         run: |
           cd src
