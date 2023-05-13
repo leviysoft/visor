@@ -2,10 +2,20 @@ using System;
 
 namespace Tinkoff.Visor;
 
+/// <summary>
+/// Interface of Property optic (aka Optional).
+/// Property allows to get or set a value of type A that can be absent inside S 
+/// </summary>
 public interface IProperty<S, A> : ISetter<S, A>
 {
+    /// <summary>
+    /// Tries to get value from source
+    /// </summary>
     A? MaybeGet(S source);
 
+    /// <summary>
+    /// Composes this Property with another
+    /// </summary>
     IProperty<S, B> Compose<B>(IProperty<A, B> other) =>
         Property<S, B>.New(
             s => MaybeGet(s) is not null ? other.MaybeGet(MaybeGet(s)!) : default,
@@ -13,11 +23,20 @@ public interface IProperty<S, A> : ISetter<S, A>
         );
 }
 
+/// <summary>
+/// Static methods for constructing Properties
+/// </summary>
 public static class Property<S, A>
 {
+    /// <summary>
+    /// Constructs a Property from a pair of functions
+    /// </summary>
     public static IProperty<S, A> New(Func<S, A?> get, Func<Func<A, A>, Func<S, S>> set) =>
         new FuncProperty<S, A>(get, set);
 
+    /// <summary>
+    /// Constructs an "always absent" Property
+    /// </summary>
     public static IProperty<S, A> Void =>
         new FuncProperty<S, A>(_ => default, _ => s => s);
 
