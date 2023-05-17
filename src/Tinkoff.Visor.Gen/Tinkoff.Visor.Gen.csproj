@@ -4,6 +4,11 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <Nullable>disable</Nullable>
         <IncludeBuildOutput>false</IncludeBuildOutput>
+        <Authors>danslapman</Authors>
+        <PackageDescription>Visor is an optics library for .NET</PackageDescription>
+        <PackageProjectUrl>https://github.com/Tinkoff/Visor</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Tinkoff/Visor</RepositoryUrl>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     </PropertyGroup>
 
     <ItemGroup>
@@ -15,8 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true"
-              PackagePath="analyzers/dotnet/cs" Visible="false" />
+        <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     </ItemGroup>
 
 </Project>

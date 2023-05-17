@@ -9,7 +9,7 @@ namespace Tinkoff.Visor.Gen
     [Generator]
     public class LensGenerator : IIncrementalGenerator
     {
-        static string Indent(int Steps) => new string(' ', Steps * 4);
+        static string Indent(int steps) => new string(' ', steps * 4);
 
         public void Initialize(IncrementalGeneratorInitializationContext context)
         {
@@ -58,31 +58,11 @@ namespace Tinkoff.Visor.Gen
 
                 if (opticsAttrData is null) continue;
 
+                var withNested = !opticsAttrData.ConstructorArguments.IsEmpty && (opticsAttrData.ConstructorArguments.First().Value as bool? ?? false);
+
                 var filename = $"{EscapeFileName(symbol.ToDisplayString())}.Optics.g.cs";
 
-                var code = ContainingTypesBuilder.Build(symbol, content =>
-                {
-                    foreach (var propertySymbol in symbol.GetProperties())
-                    {
-                        var propertyName = propertySymbol.ToFQF();
-
-                        if (propertyName == "EqualityContract") continue;
-
-                        var propertyType = propertySymbol.Type.ToNullableFQF();
-
-                        if (propertyType.EndsWith("?"))
-                            content.AppendLine("#nullable enable");
-
-                        content.AppendLine($"{Indent(2)}public static global::Tinkoff.Visor.ILens<{symbol.ToDisplayString()}, {propertyType}> {propertyName}Lens =>");
-                        content.AppendLine($"{Indent(3)}global::Tinkoff.Visor.Lens<{symbol.ToDisplayString()}, {propertyType}>.New(");
-                        content.AppendLine($"{Indent(4)}p => p.{propertyName},");
-                        content.AppendLine($"{Indent(4)}f => p => p with {{{propertyName} = f(p.{propertyName})}}");
-                        content.AppendLine($"{Indent(3)});");
-
-                        if (propertyType.EndsWith("?"))
-                            content.AppendLine("#nullable disable");
-                    }
-                }, true);
+                var code = ContainingTypesBuilder.Build(symbol, withNested);
 
                 context.AddSource(filename, code);
             }

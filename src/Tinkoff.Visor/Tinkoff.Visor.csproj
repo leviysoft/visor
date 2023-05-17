@@ -2,6 +2,11 @@
 
     <PropertyGroup>
         <ImplicitUsings>disable</ImplicitUsings>
+        <Authors>danslapman</Authors>
+        <PackageDescription>Visor is an optics library for .NET</PackageDescription>
+        <PackageProjectUrl>https://github.com/Tinkoff/Visor</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Tinkoff/Visor</RepositoryUrl>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     </PropertyGroup>
 
 </Project>

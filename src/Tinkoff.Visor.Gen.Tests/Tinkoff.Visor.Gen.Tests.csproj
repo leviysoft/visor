@@ -24,4 +24,9 @@
       <ProjectReference Include="..\Tinkoff.Visor.Gen\Tinkoff.Visor.Gen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     </ItemGroup>
 
+    <PropertyGroup>
+        <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+        <CompilerGeneratedFilesOutputPath>.\bin\Generated</CompilerGeneratedFilesOutputPath>
+    </PropertyGroup>
+
 </Project>

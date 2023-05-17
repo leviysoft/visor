@@ -34,28 +34,28 @@ the data itself. Let's generate `Lens` optic for the case above and see,
 how can we re-write our modification:
 
 ```csharp
-[Optics] record InnerItem(int Id, string Name);
-[Optics] record ItemWrapper(InnerItem Item, ...);
-[Optics] record Warehouse(ItemWrapper Main, ...);
-
-var idLens = Warehouse.MainLens.Compose(ItemWrapper.ItemLens).Compose(InnerItem.IdLens);
+[Optics] partial record InnerItem(int Id, string Name);
+[Optics(withNested: true)] partial record ItemWrapper(InnerItem Item, ...);
+[Optics(withNested: true)] partial record Warehouse(ItemWrapper Main, ...);
 
 var warehouse = new WareHouse(..);
 
-var warehouse2 = idLens.Set(42)(warehouse);
+var warehouse2 = Warehouse.FocusMain.FocusItem.IdLens.Set(42)(warehouse);
 ```
+
+`withNested` controls "chained" Lens generation.
 
 `Lens` is not the only optic on the table, with `Prism` for example you can
 abstract over subtyping, with `Traverse` over enumerable structures etc.
 
 ## How-to
 
-- install `Tinkoff.Visor.Gen`
-- add `[Optics]` attribute on your record
+- install `Tinkoff.Visor` and `Tinkoff.Visor.Gen`
+- add `[Optics]` attribute on your record and make your record partial
 
 ```csharp
 [Optics]
-record Sample(int Id, string Description);
+partial record Sample(int Id, string Description);
 ```
 
 - now you can use `Sample` static class containing optics:
