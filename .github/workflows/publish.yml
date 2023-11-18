@@ -29,10 +29,6 @@ jobs:
         run: |
           cd src
           dotnet pack LeviySoft.Visor.Gen/LeviySoft.Visor.Gen.csproj -c Release /p:Version=${{env.VERSION}} /p:PackageVersion=${{env.VERSION}}
-      - name: pack LeviySoft.Visor.Gen.FSharp
-        run: |
-          cd src
-          dotnet pack LeviySoft.Visor.Gen.FSharp/LeviySoft.Visor.Gen.FSharp.fsproj -c Release /p:Version=${{env.VERSION}} /p:PackageVersion=${{env.VERSION}}
       - name: pack LeviySoft.Visor.LanguageExt
         run: |
           cd src
