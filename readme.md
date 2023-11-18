@@ -1,10 +1,10 @@
 # Visor
 
-LeviySoft.Visor is a optics library for .NET
+LeviySoft.Visor is an optics library for .NET
 
 ## Rationale
 
-C# introduced record types, which are a first-class implementation of immutable data types.
+C# 9 introduced record types, which are a first-class implementation of immutable data types.
 While records are very useful for domain modeling, it can be pretty akward to modify deeply nested structures:
 
 ```csharp
@@ -23,8 +23,8 @@ var warehouse2 = warehouse with {
 }
 ```
 
-This problem becomes more serious with every new level of nesting,
-and here optics come into the scene. The overall concept of optics
+This problem becomes more annoying with every new level of nesting,
+and here optics come on the scene. The overall concept of optics
 is to abstract accessing (and modifying) immutable data from
 the data itself. Let's generate `Lens` optic for the case above and see,
 how can we re-write our modification:
@@ -71,4 +71,4 @@ Sample.DescriptionLens.Set("replaced")(...);
 
 ## Other notes
 
-LeviySoft.Visor is a fork of Tinkoff.Visor maintained independently and not related to Tinkoff in any kind.
+LeviySoft.Visor is an independently maintained fork of Tinkoff.Visor and is not related to Tinkoff in any kind.
