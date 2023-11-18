@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace Tinkoff.Visor.Gen
+namespace LeviySoft.Visor.Gen
 {
     internal static class ContainingTypesBuilder
     {
@@ -60,8 +60,8 @@ namespace Tinkoff.Visor.Gen
                 if (propertyType.EndsWith("?"))
                     output.AppendLine("#nullable enable");
 
-                output.AppendLine($"{Indent(initialIndent + 2)}public static global::Tinkoff.Visor.ILens<{symbol.ToFQF()}, {propertyType}> {propertyName}Lens =>");
-                output.AppendLine($"{Indent(initialIndent + 3)}global::Tinkoff.Visor.Lens<{symbol.ToFQF()}, {propertyType}>.New(");
+                output.AppendLine($"{Indent(initialIndent + 2)}public static global::LeviySoft.Visor.ILens<{symbol.ToFQF()}, {propertyType}> {propertyName}Lens =>");
+                output.AppendLine($"{Indent(initialIndent + 3)}global::LeviySoft.Visor.Lens<{symbol.ToFQF()}, {propertyType}>.New(");
                 output.AppendLine($"{Indent(initialIndent + 4)}p => p.{propertyName},");
                 output.AppendLine($"{Indent(initialIndent + 4)}f => p => p with {{{propertyName} = f(p.{propertyName})}}");
                 output.AppendLine($"{Indent(initialIndent + 3)});");
@@ -94,7 +94,7 @@ namespace Tinkoff.Visor.Gen
                 if (propertyType.EndsWith("?"))
                     output.AppendLine("#nullable enable");
 
-                output.AppendLine($"{Indent(initialIndent + 2)}public static global::Tinkoff.Visor.ILens<{rootType.ToFQF()}, {propertyType}> {propertyName}Lens =>");
+                output.AppendLine($"{Indent(initialIndent + 2)}public static global::LeviySoft.Visor.ILens<{rootType.ToFQF()}, {propertyType}> {propertyName}Lens =>");
                 output.AppendLine($"{Indent(initialIndent + 3)}{rootType.ToFQF()}.{suffix}{basePropertyName}Lens.Compose({basePropertyType}.{propertyName}Lens);");
 
                 if (propertyType.EndsWith("?"))

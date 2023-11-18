@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # 
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinkoff.Visor.Gen", "Tinkoff.Visor.Gen\Tinkoff.Visor.Gen.csproj", "{E8D2803F-6E57-440F-806A-27BB2575C0EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeviySoft.Visor.Gen", "LeviySoft.Visor.Gen\LeviySoft.Visor.Gen.csproj", "{E8D2803F-6E57-440F-806A-27BB2575C0EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinkoff.Visor.Gen.Tests", "Tinkoff.Visor.Gen.Tests\Tinkoff.Visor.Gen.Tests.csproj", "{49597BF6-5B5E-4B82-8835-AF91B923D6F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeviySoft.Visor.Gen.Tests", "LeviySoft.Visor.Gen.Tests\LeviySoft.Visor.Gen.Tests.csproj", "{49597BF6-5B5E-4B82-8835-AF91B923D6F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinkoff.Visor", "Tinkoff.Visor\Tinkoff.Visor.csproj", "{2B90E9E6-6C06-42AA-95D2-C3366F79E98B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeviySoft.Visor", "LeviySoft.Visor\LeviySoft.Visor.csproj", "{2B90E9E6-6C06-42AA-95D2-C3366F79E98B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinkoff.Visor.Tests", "Tinkoff.Visor.Tests\Tinkoff.Visor.Tests.csproj", "{55D94966-7858-44C6-97A6-2CC0B3D22FDB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeviySoft.Visor.Tests", "LeviySoft.Visor.Tests\LeviySoft.Visor.Tests.csproj", "{55D94966-7858-44C6-97A6-2CC0B3D22FDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinkoff.Visor.LanguageExt", "Tinkoff.Visor.LanguageExt\Tinkoff.Visor.LanguageExt.csproj", "{F9037238-BB0D-456C-A3AA-FED9CC7B7B05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeviySoft.Visor.LanguageExt", "LeviySoft.Visor.LanguageExt\LeviySoft.Visor.LanguageExt.csproj", "{F9037238-BB0D-456C-A3AA-FED9CC7B7B05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinkoff.Visor.LanguageExt.Tests", "Tinkoff.Visor.LanguageExt.Tests\Tinkoff.Visor.LanguageExt.Tests.csproj", "{0AE99366-1370-4DD4-A1AA-46B969FC9DA0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeviySoft.Visor.LanguageExt.Tests", "LeviySoft.Visor.LanguageExt.Tests\LeviySoft.Visor.LanguageExt.Tests.csproj", "{0AE99366-1370-4DD4-A1AA-46B969FC9DA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

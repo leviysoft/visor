@@ -21,23 +21,23 @@ jobs:
       - name: prepare version
         run: |
           echo "$VERSION"
-      - name: pack Tinkoff.Visor
+      - name: pack LeviySoft.Visor
         run: |
           cd src
-          dotnet pack Tinkoff.Visor/Tinkoff.Visor.csproj -c Release /p:Version=${{env.VERSION}} /p:PackageVersion=${{env.VERSION}}
-      - name: pack Tinkoff.Visor.Gen
+          dotnet pack LeviySoft.Visor/LeviySoft.Visor.csproj -c Release /p:Version=${{env.VERSION}} /p:PackageVersion=${{env.VERSION}}
+      - name: pack LeviySoft.Visor.Gen
         run: |
           cd src
-          dotnet pack Tinkoff.Visor.Gen/Tinkoff.Visor.Gen.csproj -c Release /p:Version=${{env.VERSION}} /p:PackageVersion=${{env.VERSION}}
-      - name: pack Tinkoff.Visor.Gen.FSharp
+          dotnet pack LeviySoft.Visor.Gen/LeviySoft.Visor.Gen.csproj -c Release /p:Version=${{env.VERSION}} /p:PackageVersion=${{env.VERSION}}
+      - name: pack LeviySoft.Visor.Gen.FSharp
         run: |
           cd src
-          dotnet pack Tinkoff.Visor.Gen.FSharp/Tinkoff.Visor.Gen.FSharp.fsproj -c Release /p:Version=${{env.VERSION}} /p:PackageVersion=${{env.VERSION}}
-      - name: pack Tinkoff.Visor.LanguageExt
+          dotnet pack LeviySoft.Visor.Gen.FSharp/LeviySoft.Visor.Gen.FSharp.fsproj -c Release /p:Version=${{env.VERSION}} /p:PackageVersion=${{env.VERSION}}
+      - name: pack LeviySoft.Visor.LanguageExt
         run: |
           cd src
-          dotnet pack Tinkoff.Visor.LanguageExt/Tinkoff.Visor.LanguageExt.csproj -c Release /p:Version=${{env.VERSION}} /p:PackageVersion=${{env.VERSION}}
+          dotnet pack LeviySoft.Visor.LanguageExt/LeviySoft.Visor.LanguageExt.csproj -c Release /p:Version=${{env.VERSION}} /p:PackageVersion=${{env.VERSION}}
       - name: publish
         run: |
           cd src
-          dotnet nuget push **/Tinkoff.Visor.*.nupkg -k ${{secrets.NUGET_APIKEY}} -s https://www.nuget.org
+          dotnet nuget push **/LeviySoft.Visor.*.nupkg -k ${{secrets.NUGET_APIKEY}} -s https://www.nuget.org

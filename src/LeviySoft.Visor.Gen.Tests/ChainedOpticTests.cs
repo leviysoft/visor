@@ -1,7 +1,7 @@
 using Shouldly;
 using Xunit;
 
-namespace Tinkoff.Visor.Gen.Tests;
+namespace LeviySoft.Visor.Gen.Tests;
 
 public class ChainedOpticTests
 {

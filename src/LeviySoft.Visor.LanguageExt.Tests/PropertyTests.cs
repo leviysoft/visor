@@ -2,7 +2,7 @@ using Shouldly;
 using Xunit;
 using static LanguageExt.Prelude;
 
-namespace Tinkoff.Visor.LanguageExt.Tests;
+namespace LeviySoft.Visor.LanguageExt.Tests;
 
 public class PropertyTests
 {

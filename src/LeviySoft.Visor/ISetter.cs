@@ -1,6 +1,6 @@
 using System;
 
-namespace Tinkoff.Visor;
+namespace LeviySoft.Visor;
 
 /// <summary>
 /// Interface of Setter optic.

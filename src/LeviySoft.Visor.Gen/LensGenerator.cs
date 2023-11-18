@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace Tinkoff.Visor.Gen
+namespace LeviySoft.Visor.Gen
 {
     [Generator]
     public class LensGenerator : IIncrementalGenerator
@@ -31,7 +31,7 @@ namespace Tinkoff.Visor.Gen
         static RecordDeclarationSyntax GetSemanticTargetForGeneration(GeneratorSyntaxContext context)
         {
             var rec = (RecordDeclarationSyntax)context.Node;
-            var attributeMetadata = context.SemanticModel.Compilation.GetTypeByMetadataName("Tinkoff.Visor.OpticsAttribute");
+            var attributeMetadata = context.SemanticModel.Compilation.GetTypeByMetadataName("LeviySoft.Visor.OpticsAttribute");
 
             var model = context.SemanticModel.Compilation.GetSemanticModel(rec.SyntaxTree);
             var symbol = model.GetDeclaredSymbol(rec) as ITypeSymbol;
@@ -46,7 +46,7 @@ namespace Tinkoff.Visor.Gen
 
         private void Execute(Compilation compilation, ImmutableArray<RecordDeclarationSyntax> records, SourceProductionContext context)
         {
-            INamedTypeSymbol attributeMetadata = compilation.GetTypeByMetadataName("Tinkoff.Visor.OpticsAttribute");
+            INamedTypeSymbol attributeMetadata = compilation.GetTypeByMetadataName("LeviySoft.Visor.OpticsAttribute");
 
             foreach (var rec in records.Distinct())
             {

@@ -1,7 +1,7 @@
 using LanguageExt;
 using System;
 
-namespace Tinkoff.Visor.LanguageExt;
+namespace LeviySoft.Visor.LanguageExt;
 
 public static class Property
 {

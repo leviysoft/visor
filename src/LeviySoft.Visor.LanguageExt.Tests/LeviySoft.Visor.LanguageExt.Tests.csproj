@@ -20,7 +20,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\Tinkoff.Visor.LanguageExt\Tinkoff.Visor.LanguageExt.csproj" />
+    <ProjectReference Include="..\LeviySoft.Visor.LanguageExt\LeviySoft.Visor.LanguageExt.csproj" />
   </ItemGroup>
 
 </Project>

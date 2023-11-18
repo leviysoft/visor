@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.CodeAnalysis;
 
-namespace Tinkoff.Visor.Gen
+namespace LeviySoft.Visor.Gen
 {
     public static class SymbolHelpers
     {
