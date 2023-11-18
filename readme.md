@@ -2,10 +2,6 @@
 
 Tinkoff.Visor is a optics library for .NET
 
-Tinkoff.Visor includes the following features:
-- C# & F# support
-- incremental lens code generator
-
 ## Rationale
 
 C# introduced record types, which are a first-class implementation of immutable data types.
