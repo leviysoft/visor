@@ -1,4 +1,4 @@
-namespace Tinkoff.Visor.Gen.Tests;
+namespace LeviySoft.Visor.Gen.Tests;
 
 [Optics]
 internal partial record Inner(string Field);

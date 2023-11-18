@@ -1,6 +1,6 @@
 using System;
 
-namespace Tinkoff.Visor;
+namespace LeviySoft.Visor;
 
 [AttributeUsage(AttributeTargets.Class)]
 public class OpticsAttribute : Attribute

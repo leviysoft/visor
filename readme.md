@@ -1,6 +1,6 @@
 # Visor
 
-Tinkoff.Visor is a optics library for .NET
+LeviySoft.Visor is a optics library for .NET
 
 ## Rationale
 
@@ -46,7 +46,7 @@ abstract over subtyping, with `Traverse` over enumerable structures etc.
 
 ## How-to
 
-- install `Tinkoff.Visor` and `Tinkoff.Visor.Gen`
+- install `LeviySoft.Visor` and `LeviySoft.Visor.Gen`
 - add `[Optics]` attribute on your record and make your record partial
 
 ```csharp
