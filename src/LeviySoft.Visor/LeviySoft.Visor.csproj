@@ -4,8 +4,8 @@
         <ImplicitUsings>disable</ImplicitUsings>
         <Authors>danslapman</Authors>
         <PackageDescription>Visor is an optics library for .NET</PackageDescription>
-        <PackageProjectUrl>https://github.com/Tinkoff/Visor</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/Tinkoff/Visor</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/LeviySoft/Visor</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/LeviySoft/Visor</RepositoryUrl>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     </PropertyGroup>
 
