@@ -68,3 +68,7 @@ Sample.DescriptionLens.Set("replaced")(...);
 - Fold
 - Iso
 - utility optics for collections
+
+## Other notes
+
+LeviySoft.Visor is a fork of Tinkoff.Visor maintained independently and not related to Tinkoff in any kind.
