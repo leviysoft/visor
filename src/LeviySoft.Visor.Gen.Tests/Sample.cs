@@ -1,3 +1,5 @@
+using System.Collections.Immutable;
+
 namespace LeviySoft.Visor.Gen.Tests;
 
 [Optics]
@@ -8,7 +10,7 @@ internal partial record Sample(int Id, string Description, Inner Inner);
 
 [Optics] internal partial record InnerItem(int Id, string Name);
 
-[Optics] internal partial record Aux(string Comment);
+[Optics] internal partial record Aux(string Comment, IImmutableList<string> Tags);
 
 [Optics(withNested: true)] internal partial record ItemWrapper(InnerItem Item, Aux? Aux);
 

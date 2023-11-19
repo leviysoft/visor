@@ -62,6 +62,25 @@ var id = Sample.IdLens.Get(...);
 Sample.DescriptionLens.Set("replaced")(...);
 ```
 
+## Dealing with immutable collections & nullable properties
+
+`Visor` comes with a useful set of optics for manipulating values at nullable anr/or collection properties.
+Although `System.Collections.Immutable` is supported I strongly recommend using language-ext's immutable collections
+because standart ones breaks value equality of records.
+
+Here is a brief example of using build-in optics:
+
+```csharp
+[Optics] internal partial record InnerItem(int Id, string Name);
+[Optics] internal partial record Aux(string Comment, IImmutableList<string> Tags);
+[Optics(withNested: true)] internal partial record ItemWrapper(InnerItem Item, Aux? Aux);
+[Optics(withNested: true)] internal partial record Warehouse(ItemWrapper Main);
+
+var warehouse = new Warehouse(new ItemWrapper(new InnerItem(1, "Default"), new Aux("test", ImmutableList.Create("tag1", "tag2"))));
+var telescope = Warehouse.FocusMain.AuxLens.NotNull().Compose(Aux.TagsLens).Compose(Property.IImmutableList.First<string>());
+var warehouse2 = telescope.Set("updated_tag")(warehouse); //Now warehouse2.Main.Aux?.Tags is ("updated_tag", "tag2")
+```
+
 ## Coming soon
 - Prism
 - Traverse
