@@ -86,7 +86,6 @@ var warehouse2 = telescope.Set("updated_tag")(warehouse); //Now warehouse2.Main.
 - Traverse
 - Fold
 - Iso
-- utility optics for collections
 
 ## Other notes
 
